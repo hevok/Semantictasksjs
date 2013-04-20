@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "chat_conf.js",
+  "sourceRoot": "",
+  "sources": [
+    "chat_conf.coffee"
+  ],
+  "names": [],
+  "mappings": ";;AAAA;CAAA;CAAA,CAAA,CAA6B,GAAvB,GAAU,eAAhB;;CAAA,CACA,CAAgC,GAA1B,GAAU,GAAhB;CADA"
+}
