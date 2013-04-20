@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This chat conversation is generated in runtinbe from mock_data.coffee</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <link rel="stylesheet" href="resources/css/tasks.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/app.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/messages.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/users.css" type="text/css">
+    <link rel="stylesheet" href="resources/css//bootstrap.css">
+    <link rel="stylesheet" href="resources/css/main.css">
+    <link rel="stylesheet" href="resources/css/jquery.gridster.css" type="text/css">
+
+
+    <script src="./lib/es5-shim.js" type="text/javascript"></script>
+    <script src="./lib/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="./lib/batman.js" type="text/javascript"></script>
+    <script src="./lib/batman.solo.js" type="text/javascript"></script>
+
+    <script src="./lib/jquery.gridster.js" type="text/javascript"></script>
+
+    <script src="./js/chat_conf.js"></script>
+    <script src="./js/chat.js"></script>
+
+
+    <script src="./js/collab.js" type="text/javascript"></script>
+    <script src="./js/models.js" type="text/javascript"></script>
+    <script src="./js/views.js" type="text/javascript"></script>
+    <script src="./js/view_models.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="topbar">
+    <div class="fill">
+        <div class="container">
+            <a class="brand" href="">Websocket Chat-Room</a>
+
+            <p data-showif="Login.signed"  class="pull-right">
+                Logged in as <b data-bind="Login.currentUser.name"></b>
+            </p>
+
+            <form data-context="Login.currentUser" data-hideif="Login.signed"  class="pull-right">
+                <input placeholder="Username" data-bind="name" id="name" name="username" class="input-small" type="text">
+                <input placeholder="Password" data-bind="password" id="password" name="password" class="input-small" type="password">
+                <button id = "loginBtn"  data-event-click="Login.loginClick" class="btn">Sign in</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div id="loginPlease" data-hideif="Login.signed">
+    <h2 style="text-align: center">Chat demo application</h2>
+    <p>This is a chat demo. It will be used further in our semanticchat app.</p>
+    <h1>Please, login!</h1>
+</div>
+
+<div id="main" data-showif="Login.signed">
+    <div class="gridster">
+        <!--to be refactored soon-->
+        <ul>
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="1" data-sizex="1" data-sizey="1"></li>
+
+            <li data-row="1" data-col="2" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="2" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="2" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="2" data-sizex="1" data-sizey="1"></li>
+
+            <li data-row="1" data-col="3" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="3" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="3" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="3" data-sizex="1" data-sizey="1"></li>
+
+            <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="4" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="4" data-sizex="1" data-sizey="1"></li>
+
+
+        </ul>
+    </div>
+    <div class="dashboard" id="taskboard">
+
+        <div class="pageheader">
+            <h1 data-event-click="TaskBoard.test">Task list</h1>
+        </div>
+        <div>
+            <textarea id="newTaskText" data-bind="TaskBoard.title"  data-event-keypress="TaskBoard.pressKey"></textarea>
+            <button id = "newTaskBtn"  class="btn" data-event-click="TaskBoard.addNew">Add task</button>
+        </div>
+
+
+        <input data-bind="TaskBoard.hideCompleted" type="checkbox">hide completed</input>
+
+        <section class="board" data-showif="Task.all.length">
+
+            <div class="task" data-foreach-task="TaskBoard.items">
+                <span><input type="checkbox" data-bind="task.completed" /></span>
+                <span data-bind="task.owner"></span>
+                <span data-bind="task.title"  data-event-click="click"></span>
+            </div>
+        </section>
+
+    </div>
+
+    <div  class="dashboard" id="messageboard">
+        <div class="pageheader">
+            <h1>Messages list</h1>
+        </div>
+        <div data-event-keypress="MessageBoard.pressKey">
+            <textarea  id="newMessageText" data-bind="MessageBoard.text"></textarea>
+            <button type="submit" id="newMessageBtn"  class="btn" data-event-click="MessageBoard.addNew">Say</button>
+        </div>
+
+        <section class="board"  data-showif="Message.all.length">
+
+            <div class="message" data-foreach-message="MessageBoard.items">
+                <div data-view="MessageView">
+                    <title data-bind="message.user"></title>
+                    <p data-bind="message.text"></p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="dashboard" id="userboard">
+        <div class="pageheader">
+            <h1>Users list</h1>
+        </div>
+        <section class="board"  data-showif="User.all.length">
+            <div class="user" data-foreach-user="User.all">
+                <div data-view="UserView">
+                    <!--
+                    <video data-bind-id="user.name" id="sourcevid" autoplay="" style="width: 200px; height: 150px; border: 1px solid black;"></video>
+                    <br>
+                    -->
+                    <h4 data-bind="user.name"></h4>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>

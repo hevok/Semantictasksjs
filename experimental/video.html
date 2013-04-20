@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Videochat</title>
+
+    <link rel="stylesheet" href="../resources/css/tasks.css" type="text/css">
+    <link rel="stylesheet" href="../resources/css/app.css" type="text/css">
+    <link rel="stylesheet" href="../resources/css/messages.css" type="text/css">
+    <link rel="stylesheet" href="../resources/css/users.css" type="text/css">
+    <link rel="stylesheet" href="../resources/css//bootstrap.css">
+    <link rel="stylesheet" href="../resources/css/main.css">
+    <link rel="stylesheet" href="../resources/css/jquery.gridster.css" type="text/css">
+
+
+    <script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../lib/jquery.gridster.js" type="text/javascript"></script>
+
+    <!--experimental js-s-->
+    <script src="./widgets.js" type="text/javascript"></script>
+    <script src="./video.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+<div class="topbar">
+    <div class="fill">
+        <div class="container">
+            <a class="brand" href="">Websocket Chat-Room</a>
+            <form class="pull-right">
+                <input placeholder="Username" data-bind="name" id="name" name="username" class="input-small" type="text">
+                <input placeholder="Password" data-bind="password" id="password" name="password" class="input-small" type="password">
+                <button id = "loginBtn"   class="btn">Sign in</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div id="main" data-showif="Login.signed">
+    <div class="gridster">
+        <!--to be refactored soon-->
+        <ul>
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="1" data-sizex="1" data-sizey="1"></li>
+
+            <li data-row="1" data-col="2" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="2" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="2" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="2" data-sizex="1" data-sizey="1"></li>
+
+            <li data-row="1" data-col="3" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="3" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="3" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="3" data-sizex="1" data-sizey="1"></li>
+
+            <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
+            <li data-row="2" data-col="4" data-sizex="1" data-sizey="1"></li>
+            <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
+            <li data-row="4" data-col="4" data-sizex="1" data-sizey="1"></li>
+
+
+        </ul>
+    </div>
+
+    <div class="dashboard" id="myvideo">
+        <video id="mywebcam" autoplay="true"></video>
+    </div>
+
+
+    <div class="dashboard" id="othervideo1">
+        <video id="webcam1" autoplay="true"></video>
+    </div>
+
+
+    <div class="dashboard" id="othervideo2">
+        <video id="webcam2" autoplay="true"></video>
+    </div>
+</div>
+</body>
+</html>

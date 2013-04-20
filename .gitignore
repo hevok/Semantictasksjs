@@ -1,0 +1,27 @@
+# Temporary Files:
+*.pyc
+*~
+*.save*
+*.db
+whoosh_index
+memo
+output*
+name=*
+*.pdf
+
+#IDE Files
+
+.idea/
+*.iml
+
+#lis for look up
+lib/batman
+lib/vivagraph
+lib/gridster.js
+
+
+#GENERATED FILES
+docs/
+
+# Machine-Specific Settings:
+configuration

@@ -1,0 +1,19 @@
+{
+  "author": "antonkulaga@gmail.com",
+  "name": "Test",
+  "description": "A new and exciting application using Batman",
+  "version": "0.1.0",
+  "main": "chat.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "batman": "~>0.1.0"
+  },
+  "devDependencies": {},
+  "batman": {
+    "appName": "SemanticTasks",
+    "build": true,
+    "buildDir": "./js"
+  }
+}

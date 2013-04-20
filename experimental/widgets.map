@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "widgets.js",
+  "sourceRoot": "",
+  "sources": [
+    "widgets.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,CAAO,GAAP,GAAO;CACL,OAAA,6BAAA;;CAAA,EAAW,CAAX,IAAA,EAAW,IAAA;CAAX,EACQ,CAAR,CAAA,KAAQ;CADR,EAEY,CAAZ,KAAA,KAAY;CAFZ,EAGY,CAAZ,KAAA,KAAY;CAHZ,CAK+B,EAA/B,IAAQ,CAAR,CAAA;CALA,CAM+B,EAA/B,IAAQ,CAAR,CAAA;CACS,CAAkB,GAA3B,GAAQ,EAAR,CAAA;CARF,EAAO;CAAP"
+}

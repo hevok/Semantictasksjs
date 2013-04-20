@@ -1,0 +1,1 @@
+class Chat.FrameBoard extends Batman.Object

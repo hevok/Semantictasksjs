@@ -1,0 +1,1 @@
+class Chat.SearchResultBoard extends Batman.Object
